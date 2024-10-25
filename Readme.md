@@ -1,11 +1,12 @@
 
-# AGRI LINK - Farm Equipment Sharing Platform
+# AGRI LINK - Farm Equipment Rental Platform
 
 Agri Link is a platform that enables farmers to rent or share equipment, access government schemes, and learn best practices in farming.
 
 ## Directory Structure
 - **frontend/** - React-based frontend for user interaction.
 - **backend/** - Node.js and Express backend for server operations.
+- **database/**- Mongodb
 
 ## Setup Instructions
 

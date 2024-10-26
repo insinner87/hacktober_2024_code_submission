@@ -128,6 +128,6 @@ This project is licensed under the MIT License.
 ---
 ## Contact
 
-Mail at kdurgaprasadkavali@gmail.com for collabortaions and queries.
+Mail at kdurgaprasadkavali@gmail.com for collaborations and queries.
 
 Enjoy using WhistleSafe for secure, anonymous reporting!

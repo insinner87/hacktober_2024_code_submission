@@ -47,20 +47,13 @@ pip install -r requirements.txt
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/whistlesafe.git
-    cd whistlesafe
+    git clone https://github.com/DPRASAD-dp/hacktober_2024_code_submission.git
+    cd hacktober_2024_code_submission
     ```
 
 2. **Install Dependencies**:
     ```bash
     pip install -r requirements.txt
-    ```
-
-3. **Set up the Database**:
-    Initialize the database tables by running `user_input.py`. The SQLite database is configured to store user data and uploaded reports.
-
-    ```bash
-    python user_input.py
     ```
 
 ## Usage Guide
@@ -112,7 +105,7 @@ We welcome contributions! Here’s how you can help:
 1. **Fork the Repository**: Click the "Fork" button at the top of this page to create a copy of this repository.
 2. **Clone the Forked Repository**:
     ```bash
-    git clone https://github.com/yourusername/whistlesafe.git
+    git clone https://github.com/DPRASAD-dp/hacktober_2024_code_submission.git
     ```
 3. **Create a New Branch**:
     ```bash
@@ -133,5 +126,8 @@ We welcome contributions! Here’s how you can help:
 This project is licensed under the MIT License.
 
 ---
+##Contact
+
+Mail at kdurgaprasadkavali@gmail.com for collabortaions and queries.
 
 Enjoy using WhistleSafe for secure, anonymous reporting!

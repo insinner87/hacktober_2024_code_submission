@@ -1,7 +1,7 @@
 
 # WhistleSafe: Anonymous Reporting System
 
-![WhistleSafe Logo](Logo.jpg)
+![WhistleSafe Logo](logo/Logo.jpg)
 
 
 WhistleSafe is an anonymous reporting platform designed to enable individuals to securely submit reports on incidents and suspicions. With IBM Watsonx for natural language processing of the text report to extract key details and a custom deepfake detection pipeline for video validation, WhistleSafe ensures comprehensive review and management of reports via an interactive authority dashboard.

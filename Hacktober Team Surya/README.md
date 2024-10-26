@@ -3,6 +3,8 @@
 ## Overview
 Agro-Mitra is a comprehensive agricultural platform designed to bridge the gap between technology, agriculture, and rural development. 
 The platform aims to empower farmers and enhance their livelihoods while providing customers with access to fresh, high-quality produce.
+To know more go to the given youtube link : 
+https://youtu.be/IaDg-VIDL44
 
 ## Features
 
@@ -79,3 +81,6 @@ For support, please contact us through:
 - Government of India
 - Asutosh College of Agriculture
 - [Other partners/contributors]
+
+To know more go to the given youtube link : 
+https://youtu.be/IaDg-VIDL44

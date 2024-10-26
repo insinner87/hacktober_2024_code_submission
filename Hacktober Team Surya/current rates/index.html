@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commodity Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result-container {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .result-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .commodity-title {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .commodity-details {
+            margin-left: 10px;
+        }
+        .state {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .price {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Commodity Price Data Search (per 100kgs)</h1>
+
+<input type="text" id="searchTerm" placeholder="Enter commodity, state, or market" style="padding: 5px; width: 300px;">
+<button onclick="searchData()">Search</button>
+
+<div class="result-container" id="results">Enter a term and press "Search" to retrieve results.</div>
+
+<script>
+    let allData = [];
+
+    // Load the data.json file
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            allData = data;
+        })
+        .catch(error => {
+            console.error('Error loading data:', error);
+            document.getElementById('results').textContent = "Failed to load data.";
+        });
+
+    function searchData() {
+        const searchTerm = document.getElementById('searchTerm').value.toLowerCase();
+        const resultsContainer = document.getElementById('results');
+        
+        if (!searchTerm) {
+            resultsContainer.innerHTML = "<p>Please enter a search term.</p>";
+            return;
+        }
+
+        const filteredResults = allData.filter(record => {
+            return (
+                (record.commodity && record.commodity.toLowerCase().includes(searchTerm)) ||
+                (record.state && record.state.toLowerCase().includes(searchTerm)) ||
+                (record.market && record.market.toLowerCase().includes(searchTerm))
+            );
+        });
+
+        resultsContainer.innerHTML = filteredResults.length > 0
+            ? filteredResults.map(record => `
+                <div class="result-item">
+                    <div class="commodity-title">${record.commodity || 'N/A'}</div>
+                    <div class="commodity-details">
+                        <span class="state">State: ${record.state || 'N/A'}</span><br>
+                        <span class="price">Min Price: ₹${record.min_price || 'N/A'} | Max Price: ₹${record.max_price || 'N/A'}</span>
+                    </div>
+                </div>
+            `).join('')
+            : "<p>No records found matching your search term.</p>";
+    }
+</script>
+
+</body>
+</html>

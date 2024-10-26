@@ -1,5 +1,5 @@
 # SafeSurf 
-![SafeSurf Logo](SafeSurf/img/extension_logo.png)
+![SafeSurf Logo](img/extension_logo.png)
 
 It is a browser extension which aims to enhance online security and protect users from various online threats. 
 

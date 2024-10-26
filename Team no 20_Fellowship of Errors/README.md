@@ -13,9 +13,9 @@ WhistleSafe is an anonymous reporting platform designed to enable individuals to
 3. [Getting Started](#getting-started)
 4. [Usage Guide](#usage-guide)
 5. [Project Structure](#project-structure)
-6. [Configuration](#configuration)
-7. [Contributing](#contributing)
-8. [License](#license)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Contact](#contact)
 
 ## Project Overview
 
@@ -126,7 +126,7 @@ We welcome contributions! Here’s how you can help:
 This project is licensed under the MIT License.
 
 ---
-##Contact
+## Contact
 
 Mail at kdurgaprasadkavali@gmail.com for collabortaions and queries.
 

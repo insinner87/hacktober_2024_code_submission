@@ -1,16 +1,20 @@
-# SafeSurf
+# SafeSurf 
+![SafeSurf Logo](img/extension_logo.png)
 
-**SafeSurf** is a browser extension that enhances data security and privacy by scanning and blocking malicious elements on web pages in real-time. It protects users from common online threats, such as malware and phishing, to enable safer browsing.
+It is a browser extension which aims to enhance online security and protect users from various online threats. 
 
 ## Features
+1) Real-time Scanning
+2) Selective Threat Detection
+3) Customizable Settings
+4) User Friendly Interface
 
-- Real-time scanning of webpages for suspicious activity
-- Selective blocking of potentially harmful elements
-- Simple, user-friendly interface with customizable settings
+## Installation
+1) Visit the releases page and download the latest source code.
+2) Extract the downloaded file, which should result in a folder containing the name SafeSurf.
+3) Open the extensions page in Chrome/Edge (chrome://extensions or edge://extensions).
+4) Enable Developer Mode.
+5) Drag and drop the folder anywhere on the extensions page to import it. Ensure not to delete the folder afterwards.
 
-## To install SafeSurf:
-
-- Clone this repo.
-- Open Chrome (or any Chromium-based browser) and go to chrome://extensions.
-- Enable Developer mode.
-- Click on Load unpacked and select the SafeSurf directory.
+## Usage
+Once installed, SafeSurf works in the background, scanning web pages as you browse. If a potential threat is detected, SafeSurf will display a warning message, allowing you to proceed with caution or return to safety.

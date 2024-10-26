@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AthleTech</title>
+    <link rel="icon"
+        href="https://www.onlineresultportal.com/wp-content/uploads/2023/05/VIT_AP_University_seal.svg_.png" />
+    <!-- Google Font: Source Sans Pro -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback"> -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="http://localhost/scbs/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet"
+        href="http://localhost/scbs/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="http://localhost/scbs/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="http://localhost/scbs/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="http://localhost/scbs/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="http://localhost/scbs/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="http://localhost/scbs/dist/css/adminlte.css">
+    <link rel="stylesheet" href="http://localhost/scbs/dist/css/custom.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="http://localhost/scbs/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="http://localhost/scbs/plugins/summernote/summernote-bs4.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="http://localhost/scbs/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <style type="text/css">
+        /* Chart.js */
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: .99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            animation: chartjs-render-animation 1ms
+        }
+
+        .chartjs-size-monitor,
+        .chartjs-size-monitor-expand,
+        .chartjs-size-monitor-shrink {
+            position: absolute;
+            direction: ltr;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: -1
+        }
+
+        .chartjs-size-monitor-expand>div {
+            position: absolute;
+            width: 1000000px;
+            height: 1000000px;
+            left: 0;
+            top: 0
+        }
+
+        .chartjs-size-monitor-shrink>div {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            left: 0;
+            top: 0
+        }
+    </style>
+
+    <!-- jQuery -->
+    <script src="http://localhost/scbs/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="http://localhost/scbs/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="http://localhost/scbs/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="http://localhost/scbs/plugins/toastr/toastr.min.js"></script>
+    <script>
+        var _base_url_ = 'http://localhost/scbs/';
+    </script>
+    <script src="http://localhost/scbs/dist/js/script.js"></script>
+    <script src="http://localhost/scbs/assets/js/scripts.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: Apple Chancery, cursive;
+        }
+
+        #main-header {
+            position: relative;
+            background: rgb(0, 0, 0) !important;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.48503151260504207) 22%, rgba(0, 0, 0, 0.39539565826330536) 49%, rgba(0, 212, 255, 0) 100%) !important;
+            height: 70vh;
+        }
+
+        #main-header:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(http://localhost/scbs/uploads/system-cover.png?v=1648002561);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            filter: drop-shadow(0px 7px 6px black);
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        img#user_avatar {
+            width: 2em;
+            height: 2em;
+            object-fit: cover;
+            object-position: center center;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-gradient-light fixed-top" id="topNavBar">
+        <div class="container px-4 px-lg-5 ">
+            <button class="navbar-toggler btn btn-sm" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="./">
+                <img src="https://www.onlineresultportal.com/wp-content/uploads/2023/05/VIT_AP_University_seal.svg_.png"
+                    width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                VIT-AP </a>
+
+            <!-- <form class="form-inline" id="search-form">
+                  <div class="input-group">
+                    <input class="form-control form-control-sm form " type="search" placeholder="Search" aria-label="Search" name="search"  value=""  aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-success btn-sm m-0" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+                </form> -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link " aria-current="page"
+                            href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link "
+                            href="facilities.html">Facilities</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link "
+                            href="hack/bmi/bmi-calculator.html">BMI</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link "
+                            href="hack/index.html">Fitness
+                            Tracking</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                </div>
+            </div>
+            <div>
+                <a href="sign%20in.html"
+                    class="text-reset text-decoration-none mx-2"><b>Login</b></a> |
+                <a href="register.html"
+                    class="text-reset text-decoration-none mx-2"><b>Register</b></a> |
+                <a href="Admin%20sign%20in.html
+                    " class="text-reset text-decoration-none mx-2"><b>Admin</b></a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        $(function () {
+            $('#login-btn').click(function () {
+                uni_modal("", "login.php")
+            })
+            $('#navbarResponsive').on('show.bs.collapse', function () {
+                $('#mainNav').addClass('navbar-shrink')
+            })
+            $('#navbarResponsive').on('hidden.bs.collapse', function () {
+                if ($('body').offset.top == 0)
+                    $('#mainNav').removeClass('navbar-shrink')
+            })
+        })
+
+        $('#search-form').submit(function (e) {
+            e.preventDefault()
+            var sTxt = $('[name="search"]').val()
+            if (sTxt != '')
+                location.href = './?p=products&search=' + sTxt;
+        })
+    </script>
+    <style>
+        .facility-img {
+            width: 100%;
+            object-fit: scale-down;
+            object-position: center center;
+        }
+    </style>
+    <section class="py-5">
+        <div class="container pt-4">
+            <div class="card rounded-0 card-outline card-primary shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="https://www.experttabletennis.com/wp-content/uploads/2016/02/best-table-tennis-clubs.jpg"
+                                alt="facility Image Indoor Basketball Court" class="img-thumbnail facility-img">
+                        </div>
+                    </div>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <small class="mx-2 text-muted">Name</small>
+                                <div class="pl-4">Single court for Tennis</div>
+                            </div>
+                            <div class="col-md-12">
+                                <small class="mx-2 text-muted">Description</small>
+                                <div class="pl-4">
+                                    <p style="margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify; color: rgb(0, 0, 0); font-family: "
+                                        Open Sans", Arial, sans-serif; font-size: 14px;"></p>
+                                    <p style="margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify; color: rgb(0, 0, 0); font-family: "
+                                        Open Sans", Arial, sans-serif; font-size: 14px;"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h1>Table Tennis Court Booking</h1>
+                            <h2>Input date and time for slot booking</h2>
+                            <div class="tableTennisBookingForm" id="tableTennisBookingForm">
+                                <label for="date">Select Date:</label>
+                                <input type="date" id="date" required>
+
+                                <label for="time">Select Time Slot:</label>
+                                <select id="time" required>
+                                    <option value="">--Select Time--</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                    <option value="18:00">06:00 PM</option>
+                                    <option value="19:00">07:00 PM</option>
+                                    <option value="20:00">08:00 PM</option>
+                                </select>
+
+                                <label for="tableTennisCourt">Select Court:</label>
+                                <select id="tableTennisCourt">
+                                    <option value="">--Select Court--</option>
+                                    <option value="court1">Table Tennis Court 1</option>
+                                    <option value="court2">Table Tennis Court 2</option>
+                                </select>
+
+
+                                <button id="bookTableTennisButton">Book Table Tennis Slot</button>
+                            </div>
+
+                            <h2>Booked Table Tennis Slots</h2>
+                            <ul id="bookedTableTennisSlots"></ul>
+                            <script src="slot/tableTennis.js"></script>
+                        </div>
+                </div>
+                </fieldset>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <script>
+        $(function () {
+            $('#book_now').click(function () {
+                if ("" == 1)
+                    uni_modal("Book Facility", "booking.php?fid=1", 'modal-sm');
+                else
+                    location.href = './login.php';
+            })
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#p_use').click(function () {
+                uni_modal("Privacy Policy", "policy.php", "mid-large")
+            })
+            window.viewer_modal = function ($src = '') {
+                start_loader()
+                var t = $src.split('.')
+                t = t[1]
+                if (t == 'mp4') {
+                    var view = $("<video src='" + $src + "' controls autoplay></video>")
+                } else {
+                    var view = $("<img src='" + $src + "' />")
+                }
+                $('#viewer_modal .modal-content video,#viewer_modal .modal-content img').remove()
+                $('#viewer_modal .modal-content').append(view)
+                $('#viewer_modal').modal({
+                    show: true,
+                    backdrop: 'static',
+                    keyboard: false,
+                    focus: true
+                })
+                end_loader()
+
+            }
+            window.uni_modal = function ($title = '', $url = '', $size = "") {
+                start_loader()
+                $.ajax({
+                    url: $url,
+                    error: err => {
+                        console.log()
+                        alert("An error occured")
+                    },
+                    success: function (resp) {
+                        if (resp) {
+                            $('#uni_modal .modal-title').html($title)
+                            $('#uni_modal .modal-body').html(resp)
+                            if ($size != '') {
+                                $('#uni_modal .modal-dialog').addClass($size + '  modal-dialog-centered')
+                            } else {
+                                $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md modal-dialog-centered")
+                            }
+                            $('#uni_modal').modal({
+                                show: true,
+                                backdrop: 'static',
+                                keyboard: false,
+                                focus: true
+                            })
+                            end_loader()
+                        }
+                    }
+                })
+            }
+            window._conf = function ($msg = '', $func = '', $params = []) {
+                $('#confirm_modal #confirm').attr('onclick', $func + "(" + $params.join(',') + ")")
+                $('#confirm_modal .modal-body').html($msg)
+                $('#confirm_modal').modal('show')
+            }
+        })
+    </script>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+        </div>
+    </footer>
+
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="http://localhost/scbs/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="http://localhost/scbs/plugins/select2/js/select2.full.min.js"></script>
+    <!-- Summernote -->
+    <script src="http://localhost/scbs/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="http://localhost/scbs/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="http://localhost/scbs/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="http://localhost/scbs/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="http://localhost/scbs/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <!-- <script src="http://localhost/scbs/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+    <!-- AdminLTE App -->
+    <script src="http://localhost/scbs/dist/js/adminlte.js"></script>
+
+    <div class="modal fade" id="uni_modal" role='dialog'>
+        <div class="modal-dialog   rounded-0 modal-md modal-dialog-centered" role="document">
+            <div class="modal-content  rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id='submit'
+                        onclick="$('#uni_modal form').submit()">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="uni_modal_right" role='dialog'>
+        <div class="modal-dialog  rounded-0 modal-full-height  modal-md" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="fa fa-arrow-right"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="viewer_modal" role='dialog'>
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="confirm_modal" role='dialog'>
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="delete_content"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id='confirm' onclick="">Continue</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

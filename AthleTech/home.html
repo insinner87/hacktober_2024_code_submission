@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AthleTech</title>
+  <link rel="icon" href="https://www.onlineresultportal.com/wp-content/uploads/2023/05/VIT_AP_University_seal.svg_.png" />
+  <!-- Google Font: Source Sans Pro -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback"> -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="http://localhost/scbs/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet"
+    href="http://localhost/scbs/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="http://localhost/scbs/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="http://localhost/scbs/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="http://localhost/scbs/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="http://localhost/scbs/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="http://localhost/scbs/dist/css/adminlte.css">
+  <link rel="stylesheet" href="http://localhost/scbs/dist/css/custom.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="http://localhost/scbs/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="http://localhost/scbs/plugins/summernote/summernote-bs4.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="http://localhost/scbs/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <style type="text/css">
+    /* Chart.js */
+    @keyframes chartjs-render-animation {
+      from {
+        opacity: .99
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .chartjs-render-monitor {
+      animation: chartjs-render-animation 1ms
+    }
+
+    .chartjs-size-monitor,
+    .chartjs-size-monitor-expand,
+    .chartjs-size-monitor-shrink {
+      position: absolute;
+      direction: ltr;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      pointer-events: none;
+      visibility: hidden;
+      z-index: -1
+    }
+
+    .chartjs-size-monitor-expand>div {
+      position: absolute;
+      width: 1000000px;
+      height: 1000000px;
+      left: 0;
+      top: 0
+    }
+
+    .chartjs-size-monitor-shrink>div {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      left: 0;
+      top: 0
+    }
+  </style>
+
+  <!-- jQuery -->
+  <script src="http://localhost/scbs/plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="http://localhost/scbs/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="http://localhost/scbs/plugins/sweetalert2/sweetalert2.min.js"></script>
+  <!-- Toastr -->
+  <script src="http://localhost/scbs/plugins/toastr/toastr.min.js"></script>
+  <script>
+    var _base_url_ = 'http://localhost/scbs/';
+  </script>
+  <script src="http://localhost/scbs/dist/js/script.js"></script>
+  <script src="http://localhost/scbs/assets/js/scripts.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      font-family: Apple Chancery, cursive;
+    }
+
+    #main-header {
+      position: relative;
+      background: rgb(0, 0, 0) !important;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.48503151260504207) 22%, rgba(0, 0, 0, 0.39539565826330536) 49%, rgba(0, 212, 255, 0) 100%) !important;
+      height: 70vh;
+    }
+
+    #main-header:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(http://localhost/scbs/uploads/system-cover.png?v=1648002561);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      filter: drop-shadow(0px 7px 6px black);
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <style>
+    img#user_avatar {
+      width: 2em;
+      height: 2em;
+      object-fit: cover;
+      object-position: center center;
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-light bg-gradient-light fixed-top" id="topNavBar">
+    <div class="container px-4 px-lg-5 ">
+      <button class="navbar-toggler btn btn-sm" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <a class="navbar-brand" href="./">
+        <img src="https://www.onlineresultportal.com/wp-content/uploads/2023/05/VIT_AP_University_seal.svg_.png" width="30" height="30"
+          class="d-inline-block align-top" alt="" loading="lazy">
+        VIT-AP </a>
+
+      <!-- <form class="form-inline" id="search-form">
+                  <div class="input-group">
+                    <input class="form-control form-control-sm form " type="search" placeholder="Search" aria-label="Search" name="search"  value=""  aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-success btn-sm m-0" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+                </form> -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link " href="facilities.html">Facilities</a></li>
+          <li class="nav-item"><a class="nav-link " href="hack/bmi/bmi-calculator.html">BMI</a>
+          </li>
+          <li class="nav-item"><a class="nav-link " href="hack/index.html">Fitness Tracking</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+        </div>
+      </div>
+      <div>
+        <a href="sign%20in.html" class="text-reset text-decoration-none mx-2"><b>Login</b></a> |
+        <a href="register.html" class="text-reset text-decoration-none mx-2"><b>Register</b></a> |
+        <a href="Admin%20sign%20in.html
+        " class="text-reset text-decoration-none mx-2"><b>Admin</b></a>
+      </div>
+    </div>
+  </nav>
+  <script>
+    $(function () {
+      $('#login-btn').click(function () {
+        uni_modal("", "login.php")
+      })
+      $('#navbarResponsive').on('show.bs.collapse', function () {
+        $('#mainNav').addClass('navbar-shrink')
+      })
+      $('#navbarResponsive').on('hidden.bs.collapse', function () {
+        if ($('body').offset.top == 0)
+          $('#mainNav').removeClass('navbar-shrink')
+      })
+    })
+
+    $('#search-form').submit(function (e) {
+      e.preventDefault()
+      var sTxt = $('[name="search"]').val()
+      if (sTxt != '')
+        location.href = './?p=products&search=' + sTxt;
+    })
+  </script> <!-- Header-->
+  <header class="bg-dark py-5" id="main-header">
+    <div class="container h-100 d-flex align-items-center justify-content-center w-100">
+      <div class="text-center text-white w-100">
+        <h1 class="display-4 fw-bolder mx-5">Sports Complex Booking System</h1>
+        <div class="col-auto mt-4">
+          <!-- <a class="btn btn-warning btn-lg rounded-0" href="./?p=booking">Book Now</a> -->
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Section-->
+  <section class="py-5">
+    <div class="container">
+      <div class="card shadow card-outline card-primary rounded-0">
+        <div class="card-body">
+          <p
+            style="margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-align: center; padding: 0px; font-family: DauphinPlain; font-size: 70px; line-height: 90px;">
+            Welcome</p>
+          <hr
+            style="height: 1px; margin: 0px; border-top: 0px; padding: 0px; clear: both; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+          <div id="Content" style="margin: 0px; padding: 0px; position: relative;">
+            <div id="bannerL" open="" sans",="" arial,="" sans-serif;="" font-size:="" 14px;="" background-color:=""
+              rgb(255,="" 255,="" 255);"=""
+              style="margin: 0px 0px 0px -160px; padding: 0px; position: sticky; top: 20px; width: 160px; height: 10px; float: left; text-align: right; color: rgb(0, 0, 0);">
+            </div>
+            <div id="bannerR" open="" sans",="" arial,="" sans-serif;="" font-size:="" 14px;="" background-color:=""
+              rgb(255,="" 255,="" 255);"=""
+              style="margin: 0px -160px 0px 0px; padding: 0px; position: sticky; top: 20px; width: 160px; height: 10px; float: right; color: rgb(0, 0, 0);">
+            </div>
+            <div class="boxed" open="" sans",="" arial,="" sans-serif;="" font-size:="" 14px;="" text-align:=""
+              center;="" background-color:="" rgb(255,="" 255,="" 255);"=""
+              style="margin: 10px 28.7969px; padding: 0px; clear: both; color: rgb(0, 0, 0);">
+              <div id="lipsum" style="margin: 0px; padding: 0px; text-align: justify;"></div>
+            </div>
+          </div>
+          <p style="margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px;">
+
+          </p>
+          <p style="margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px;">"Welcome to AthleTech, your
+            premier destination for revolutionizing your fitness journey through cutting-edge technology. We believe
+            that
+            exercise and wellness should be accessible, efficient, and most importantly, enjoyable. Our platform
+            seamlessly
+            integrates innovative tech solutions with the world of sports and fitness, empowering you to take control of
+            your
+            health.
+
+            From tracking your daily activity to optimizing workout routines, our website offers an array of tools and
+            resources
+            tailored to suit every fitness level. Whether you're an avid athlete or just starting out, our community is
+            here to
+            inspire, motivate and support you every step of the way.
+
+            Explore our expert-curated content, engage with like-minded enthusiasts and unlock your full potential. Join
+            the
+            movement today and discover a smarter, healthier you."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    $(function () {
+      $('#search').on('input', function () {
+        var _search = $(this).val().toLowerCase().trim()
+        $('#service_list .item').each(function () {
+          var _text = $(this).text().toLowerCase().trim()
+          _text = _text.replace(/\s+/g, ' ')
+          console.log(_text)
+          if ((_text).includes(_search) == true) {
+            $(this).toggle(true)
+          } else {
+            $(this).toggle(false)
+          }
+        })
+        if ($('#service_list .item:visible').length > 0) {
+          $('#noResult').hide('slow')
+        } else {
+          $('#noResult').show('slow')
+        }
+      })
+      $('#service_list .item').hover(function () {
+        $(this).find('.callout').addClass('shadow')
+      })
+      $('#service_list .view_service').click(function () {
+        uni_modal("Service Details", "view_service.php?id=" + $(this).attr('data-id'), 'mid-large')
+      })
+      $('#send_request').click(function () {
+        uni_modal("Fill the Service Request Form", "send_request.php", 'large')
+      })
+
+    })
+    $(document).scroll(function () {
+      $('#topNavBar').removeClass('bg-transparent navbar-light navbar-dark bg-gradient-light text-light')
+      if ($(window).scrollTop() === 0) {
+        $('#topNavBar').addClass('navbar-dark bg-transparent text-light')
+      } else {
+        $('#topNavBar').addClass('navbar-light bg-gradient-light ')
+      }
+    });
+    $(function () {
+      $(document).trigger('scroll')
+    })
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#p_use').click(function () {
+        uni_modal("Privacy Policy", "policy.php", "mid-large")
+      })
+      window.viewer_modal = function ($src = '') {
+        start_loader()
+        var t = $src.split('.')
+        t = t[1]
+        if (t == 'mp4') {
+          var view = $("<video src='" + $src + "' controls autoplay></video>")
+        } else {
+          var view = $("<img src='" + $src + "' />")
+        }
+        $('#viewer_modal .modal-content video,#viewer_modal .modal-content img').remove()
+        $('#viewer_modal .modal-content').append(view)
+        $('#viewer_modal').modal({
+          show: true,
+          backdrop: 'static',
+          keyboard: false,
+          focus: true
+        })
+        end_loader()
+
+      }
+      window.uni_modal = function ($title = '', $url = '', $size = "") {
+        start_loader()
+        $.ajax({
+          url: $url,
+          error: err => {
+            console.log()
+            alert("An error occured")
+          },
+          success: function (resp) {
+            if (resp) {
+              $('#uni_modal .modal-title').html($title)
+              $('#uni_modal .modal-body').html(resp)
+              if ($size != '') {
+                $('#uni_modal .modal-dialog').addClass($size + '  modal-dialog-centered')
+              } else {
+                $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md modal-dialog-centered")
+              }
+              $('#uni_modal').modal({
+                show: true,
+                backdrop: 'static',
+                keyboard: false,
+                focus: true
+              })
+              end_loader()
+            }
+          }
+        })
+      }
+      window._conf = function ($msg = '', $func = '', $params = []) {
+        $('#confirm_modal #confirm').attr('onclick', $func + "(" + $params.join(',') + ")")
+        $('#confirm_modal .modal-body').html($msg)
+        $('#confirm_modal').modal('show')
+      }
+    })
+  </script>
+  <!-- Footer-->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+    </div>
+  </footer>
+
+
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="http://localhost/scbs/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Select2 -->
+  <script src="http://localhost/scbs/plugins/select2/js/select2.full.min.js"></script>
+  <!-- Summernote -->
+  <script src="http://localhost/scbs/plugins/summernote/summernote-bs4.min.js"></script>
+  <script src="http://localhost/scbs/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="http://localhost/scbs/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="http://localhost/scbs/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="http://localhost/scbs/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <!-- <script src="http://localhost/scbs/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+  <!-- AdminLTE App -->
+  <script src="http://localhost/scbs/dist/js/adminlte.js"></script>
+
+  <div class="modal fade" id="uni_modal" role='dialog'>
+    <div class="modal-dialog   rounded-0 modal-md modal-dialog-centered" role="document">
+      <div class="modal-content  rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id='submit'
+            onclick="$('#uni_modal form').submit()">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="uni_modal_right" role='dialog'>
+    <div class="modal-dialog  rounded-0 modal-full-height  modal-md" role="document">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="fa fa-arrow-right"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="viewer_modal" role='dialog'>
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
+        <img src="" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="confirm_modal" role='dialog'>
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmation</h5>
+        </div>
+        <div class="modal-body">
+          <div id="delete_content"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id='confirm' onclick="">Continue</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

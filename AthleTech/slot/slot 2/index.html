@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+    <script src="https://docs.opencv.org/master/opencv.js" async></script>
+</head>
+
+<body>
+    
+    <!-- Badminton Court Booking -->
+    <h1>Badminton Court Booking</h1>
+    <h2>Input date and time for slot booking</h2>
+    <div class="badmintonBookingForm" id="badmintonBookingForm">
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" required>
+
+        <label for="time">Select Time Slot:</label>
+        <select id="time" required>
+            <option value="">--Select Time--</option>
+            <option value="16:00">04:00 PM</option>
+            <option value="17:00">05:00 PM</option> 
+            <option value="18:00">06:00 PM</option>
+            <option value="19:00">07:00 PM</option>
+            <option value="20:00">08:00 PM</option>
+        </select>
+
+        <label for="badmintonCourt">Select Court:</label>
+        <select id="badmintonCourt" required>
+            <option value="">--Select Court--</option>
+            <option value="Court 1">Court 1</option>
+            <option value="Court 2">Court 2</option>
+            <option value="Court 3">Court 3</option>
+            <option value="Court 4">Court 4</option>
+            <option value="Court 5">Court 5</option>
+            <option value="Court 6">Court 6</option>
+        </select>
+
+        <button id="bookBadmintonButton">Book Badminton Slot</button>
+    </div>
+
+    <h2>Booked Badminton Slots</h2>
+    <ul id="bookedBadmintonSlots"></ul>
+
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

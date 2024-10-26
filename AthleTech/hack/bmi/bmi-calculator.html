@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        /* Button Styles */
+        .redirect-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            /* Bootstrap Primary Color */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .redirect-button:hover {
+            background-color: #0056b3;
+            /* Darker shade for hover effect */
+        }
+
+        /* Form Styles */
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            /* Success color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+            /* Darker green for hover effect */
+        }
+
+        /* Result Styles */
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #result h2 {
+            color: #333;
+        }
+
+        #result h3 {
+            color: #555;
+        }
+    </style>
+    <script>
+        document.getElementById('bmi-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    // Get the weight and height values
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
+
+    // Calculate BMI
+    const bmi = weight / (height * height);
+    let category = '';
+
+    // Determine the BMI category
+    if (bmi < 18.5) {
+        category = 'Underweight';
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+        category = 'Normal weight';
+    } else if (bmi >= 25 && bmi < 29.9) {
+        category = 'Overweight';
+    } else {
+        category = 'Obesity';
+    }
+
+    // Display the result
+    document.getElementById('result').innerHTML = `
+        <h2>Your BMI: ${bmi.toFixed(2)} (${category})</h2>
+        <h3>Recommended Plans:</h3>
+        <p>${getFitnessPlan(category)}</p>
+    `;
+});
+
+// Function to suggest sports and yoga plans based on BMI category
+function getFitnessPlan(category) {
+    switch (category) {
+        case 'Underweight':
+            return 'Focus on strength training and a balanced diet to gain weight.';
+        case 'Normal weight':
+            return 'Maintain a balanced routine with a mix of cardio and yoga.';
+        case 'Overweight':
+            return 'Engage in aerobic activities and consider yoga for flexibility.';
+        case 'Obesity':
+            return 'Consult a healthcare provider for personalized plans.';
+        default:
+            return '';
+    }
+}
+
+    </script>
+</head>
+
+<body>
+    <h1>BMI Calculator</h1>
+    <form id="bmi-form">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" required>
+
+        <label for="height">Height (m):</label>
+        <input type="number" step="0.01" id="height" required>
+
+        <button type="submit">Calculate BMI</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="bmi.js">
+    </script>
+</body>
+
+</html>

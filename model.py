@@ -266,4 +266,4 @@ for episode in range(num_episodes):
         state = next_state
         score += reward
 
-    print(f'Episode: {episode+1}, Score: {score}')
+    print(f'Pattern/Arc: {episode+1}, Acc_Score: {score}')

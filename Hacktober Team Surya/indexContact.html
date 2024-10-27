@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Contact Us Form Using HTML and CSS</title>
+    <link rel="stylesheet" href="styleContact.css">
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="title">
+    <h1>Contact Us</h1>
+  </div>
+  
+  <!-- Form element with action to send data to process_contact.php -->
+  <form action="users/process_contact.php" method="POST" class="contact-form">
+    <div class="input-fields">
+      <input type="text" name="name" class="input" placeholder="Name" required>
+      <input type="email" name="email" class="input" placeholder="Email Address" required>
+      <input type="tel" name="phone" class="input" placeholder="Phone">
+      <input type="text" name="subject" class="input" placeholder="Subject">
+    </div>
+    
+    <div class="msg">
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </div>
+  </form>
+
+  <!-- Home button below the form -->
+  <div class="home-button">
+      <a href="C:\Users\DELL\Desktop\Hacktober\main_page\indexx.html" class="btn">Home</a>
+  </div>
+</div>
+
+</body>
+</html>

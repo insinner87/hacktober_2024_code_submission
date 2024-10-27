@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="calculator.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Fertilizer Requirement Calculator</h1>
+    </header>
+
+    <section>
+        <label for="cropArea">Enter the area of land (in acres): </label>
+        <input type="number" id="cropArea" placeholder="Enter acres"><br>
+        <label for="fertilizerType">Choose fertilizer type:</label>
+        <select id="fertilizerType">
+            <option value="urea">Urea</option>
+            <option value="dap">DAP</option>
+            <option value="potash">Potash</option>
+        </select><br>
+        <button onclick="calculateFertilizer()">Calculate</button>
+        <p id="result"></p>
+    </section>
+</body>
+</html>

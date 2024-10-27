@@ -1,0 +1,6 @@
+{
+    "name": "dell/hacktober",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

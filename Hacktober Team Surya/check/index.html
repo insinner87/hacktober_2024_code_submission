@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Recommendation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        /* Add some basic styling for the form */
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: auto;
+        }
+        input, select {
+            margin: 5px 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fertilizer Recommendation Form</h1>
+    <form id="fertilizerForm">
+        <input type="number" name="n" placeholder="Nitrogen (N)" required value="37">
+        <input type="number" name="p" placeholder="Phosphorus (P)" required value="0">
+        <input type="number" name="k" placeholder="Potassium (K)" required value="0">
+        <input type="number" name="t" placeholder="Temperature (°C)" required value="26">
+        <input type="number" name="h" placeholder="Humidity (%)" required value="52">
+        <input type="number" name="soilMoisture" placeholder="Soil Moisture (%)" required value="38">
+        <select name="soil" required>
+            <option value="Sandy">Sandy</option>
+            <option value="Clay">Clay</option>
+            <option value="Loamy">Loamy</option>
+        </select>
+        <select name="crop" required>
+            <option value="Maize">Maize</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Rice">Rice</option>
+        </select>
+        <button type="submit">Get Recommendation</button>
+    </form>
+    <div id="resultDiv"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#fertilizerForm').submit(function(event) {
+                event.preventDefault(); // Prevent form submission
+                $.ajax({
+                    type: 'POST',
+                    url: 'process.php', // URL of your PHP script
+                    data: $(this).serialize(), // Serialize form data
+                    success: function(response) {
+                        $('#resultDiv').html(response); // Update the result div with response
+                    },
+                    error: function() {
+                        alert('Error processing request.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
